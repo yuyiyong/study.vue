@@ -1,0 +1,68 @@
+<!--
+ * @LastEditors: yyy_dui
+ * @LastEditTime: 2021-03-10 11:40:19
+ * @FilePath: /element_test/src/pages/Layout/Menu/Menu.vue
+-->
+
+<template>
+  <div>
+    <el-menu
+      :default-active="activeIndex2"
+      class="el-menu-demo"
+      mode="horizontal"
+      @select="handleSelect"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+    >
+      <el-menu-item index="1" route="/containt1">
+        <router-link to="/containt1">内容1</router-link>
+      </el-menu-item>
+      <el-menu-item index="9"
+        ><router-link to="/containt2">内容2</router-link></el-menu-item
+      >
+      <el-menu-item index="3" @click="gotoRouteHandle(menu)" }
+        >Basic Syntax</el-menu-item
+      >
+      <!-- <el-submenu index="2">
+        <template slot="title">我的工作台</template>
+        <el-menu-item index="2-1">选项1</el-menu-item>
+        <el-menu-item index="2-2">选项2</el-menu-item>
+        <el-menu-item index="2-3">选项3</el-menu-item>
+        <el-submenu index="2-4">
+          <template slot="title">选项4</template>
+          <el-menu-item index="2-4-1">选项1</el-menu-item>
+          <el-menu-item index="2-4-2">选项2</el-menu-item>
+          <el-menu-item index="2-4-3">选项3</el-menu-item>
+        </el-submenu>
+      </el-submenu>
+      <el-menu-item index="3" disabled>消息中心</el-menu-item>
+      <el-menu-item index="4"
+        ><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item
+      > -->
+    </el-menu>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Menu',
+  data () {
+    return {
+      activeIndex: '1',
+      activeIndex2: '1'
+    }
+  },
+  methods: {
+    handleSelect (key, keyPath) {
+      console.log(key, keyPath)
+    },
+    gotoRouteHandle (path) {
+      console.log('path---', path)
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped></style>
